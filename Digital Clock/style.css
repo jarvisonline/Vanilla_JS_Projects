@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "YourFont";
+  src: url("./digital_7/digital-7.ttf") format("truetype");
+}
+
+body {
+  min-height: 100vh;
+  background: #383b53;
+}
+
+nav {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  border-radius: 10px; /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Semi-transparent white border */
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#clock {
+  font-family: "YourFont", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+#hrdots,
+#mindots,
+#secdots {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+#secdots::before,
+#mindots::before,
+#hrdots::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+#hrdots h2,
+#mindots h2,
+#secdots h2 {
+  position: absolute;
+  text-align: center;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 4em;
+  font-weight: 500;
+  color: var(--clr);
+}
+
+#hrdots h2 span,
+#mindots h2 span,
+#secdots h2 span {
+  position: absolute;
+  font-size: 0.25em;
+  font-weight: 500;
+  bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+#secdots b {
+  position: absolute;
+  color: #fff;
+  display: inline-flex;
+  transform: translate(150px, 90px);
+}
+
+#secdots .dot,
+#mindots .dot,
+#hrdots .dot {
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 3px;
+  background-color: var(--clr);
+  transform-origin: 100px;
+}
+#secdots .active.dot,
+#mindots .active.dot,
+#hrdots .active.dot {
+  background: var(--clr);
+  box-shadow: 0 0 10px var(--clr), 0 0 20px var(--clr), 0 0 30px var(--clr);
+}
+#secdots .active.dot ~ .dot,
+#mindots .active.dot ~ .dot,
+#hrdots .active.dot ~ .dot {
+  background: #555;
+}
+#secdots .dot:nth-child(5n + 5),
+#mindots .dot:nth-child(5n + 5) {
+  width: 20px;
+}
+
+#hrdots .dot {
+  width: 20px;
+}
+
+#hrdots .dot::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--clr);
+  box-shadow: 1.5px 9px var(--clr), 4px 18px var(--clr), 7px 27px var(--clr);
+}
+
+#hrdots .dot.active ~ .dot::before {
+  background: #555;
+  box-shadow: 1.5px 9px #555, 4px 18px #555, 7px 27px #555;
+}
+
+@media only screen and (max-width: 767px)  {
+  #clock {
+    display: flex;
+    flex-direction: column;
+    top: -100px;
+  }
+}
