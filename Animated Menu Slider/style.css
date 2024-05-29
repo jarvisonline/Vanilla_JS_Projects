@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  background: #222327;
+}
+
+.container {
+  height: 70px;
+  width: 370px;
+  background: #2f2f2f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container li {
+  list-style-type: none;
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  color: #fff;
+  float: left;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.container li a {
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  top: 22px;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+
+.container li p {
+  margin-top: 35px;
+  font-size: 12px;
+  transition: all 0.2s;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.container .marker-box {
+  width: 55px;
+  height: 55px;
+  background: #222327;
+  position: absolute;
+  top: -30px;
+  left: 21px;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .marker-box .marker {
+  height: 45px;
+  width: 45px;
+  background: #6840c5;
+}
+
+.container li.active a {
+  top: -13px;
+  font-size: 18px;
+  transition: all 0.2s;
+}
+
+.container li.active p {
+  opacity: 1;
+  margin-top: 15px;
+  transition: all 0.2s;
+}
+
+.container li:nth-child(1).active ~ .marker-box {
+  left: 21px;
+  transition: all 0.2s;
+  transform: rotate(45deg);
+}
+.container li:nth-child(2).active ~ .marker-box {
+  left: 90px;
+  transition: all 0.2s;
+  transform: rotate(135deg);
+}
+.container li:nth-child(3).active ~ .marker-box {
+  left: 157px;
+  transition: all 0.2s;
+  transform: rotate(225deg);
+}
+.container li:nth-child(4).active ~ .marker-box {
+  left: 225px;
+  transition: all 0.2s;
+  transform: rotate(315deg);
+}
+.container li:nth-child(5).active ~ .marker-box {
+  left: 293px;
+  transition: all 0.2s;
+  transform: rotate(405deg);
+}
