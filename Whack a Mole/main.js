@@ -70,6 +70,15 @@ function selectTile() {
   if (this == currMoleTile) {
     score += 10;
     document.getElementById("score").innerText = score.toString(); // update score html
+
+    // Add "Whack!" text
+    let whackText = document.createElement("span");
+    whackText.innerHTML = "Whack!";
+    whackText.classList.add("whack-text");
+    this.appendChild(whackText);
+    setTimeout(() => {
+      whackText.remove();
+    }, 1000);
   } else if (this == currPlantTile) {
     document.getElementById("score").innerText =
       "GAME OVER: " + score.toString(); // update score html
